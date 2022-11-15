@@ -23,12 +23,15 @@ def take_input(inp):
     print_matrix()
     return [ur1-1, uc1-1]
 
-print_matrix()
-for i in range(9):
-    l = take_input(inp)
-    if check_win_status(l[0], l[1]):
-        print('Won')
-        break
-    inp = 'X' if inp == 'O' else 'O'
-else:
-    print('draw')
+def main(inp):
+    print_matrix()
+    for i in range(9):
+        l = take_input(inp)
+        if check_win_status(l[0], l[1]):
+            print('Won')
+            break
+        inp = 'X' if inp == 'O' else 'O'
+    else:
+        print('draw')
+
+main(inp)
